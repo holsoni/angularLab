@@ -1,52 +1,7 @@
 <app-header [logo]="name" [user]="userName" (event)="onLogoClick()"></app-header>
+<div class="main">
 <app-left-nav-bar [menuItems]="menuItems" (event)="onMenuClick($event)"></app-left-nav-bar>
-<div>
-  <div *ngIf="greeting"      [style]="{'position': 'absolute', 'top': '50%', 'left': '50%', 'transform': 'translate(-50%, -50%)', 'color':'red','font-size':'36px','font-weight':'bold'}">
-  Привіт, світ!
-  </div>
-  <div  [style]="{'position': 'absolute', 'top': '90px', 'left': '250px'}">
-  <ng-container *ngIf="list;else cardDisplay">
-    <ul *ngFor="let item of data">
-      <li>
-        <div [ngSwitch]="item.type" [style]="{'display': 'flex','flex-direction':'row'}">
-            <div>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.subtitle }}</p>
-              <ng-container *ngSwitchCase="'type1'">
-                <p>Rating: {{ item.rating }}</p>
-              </ng-container>
-              <ng-container *ngSwitchCase="'type2'">
-                <p>Created date: {{ item.createdDate}}</p>
-              </ng-container>
-            </div>
-            <div>  <img [src]="item.image" alt="{{ item.title }}"></div>
+  <router-outlet></router-outlet>
 
-        </div>
-      </li>
-    </ul>
-  </ng-container>
-    <ng-template #cardDisplay>
-      <div [style]="{'display': 'flex','flex-direction':'row'}">
-        <div  *ngFor="let item of data" [style]="{'display': 'flex','flex-direction':'column','padding':'20px'}">
-          <img [src]="item.image" alt="{{ item.title }}">
-          <div [ngSwitch]="item.type">
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.subtitle }}</p>
-            <ng-container *ngSwitchCase="'type1'">
-              <p>Rating: {{ item.rating }}</p>
-            </ng-container>
-            <ng-container *ngSwitchCase="'type2'">
-              <p>Created: {{ item.createdDate | date }}</p>
-            </ng-container>
-          </div>
-        </div>
-      </div>
-    </ng-template>
-
-
-
-  <button (click)="toggleDisplay()">{{ list ? 'Switch to Cards' : 'Switch to List' }}</button>
-  </div>
 </div>
-
 <app-footer [menuItems]="menuItems" (event)="onMenuClick($event)"></app-footer>

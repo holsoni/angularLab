@@ -1,7 +1,8 @@
-<div [style]="{}">
+<div>
   <ul>
-    <li *ngFor="let item of menuItems" (click)="onMenuClick(item.label)">
-      <a [ngClass]="{'active': item.active}" href="#">{{item.label}}</a>
-    </li>
+    <li><a routerLink="/home" routerLinkActive="active">Main page</a></li>
+    <li><a routerLink="/films" routerLinkActive="active">Films</a></li>
+    <li><a routerLink="/series" routerLinkActive="active">Series</a></li>
+    <li><a routerLink="/clips" routerLinkActive="active">Clips</a></li>
   </ul>
 </div>
