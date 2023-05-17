@@ -1,1 +1,24 @@
-<p>films works!</p>
+<mat-card>
+  <img mat-card-image [style]="{'width':'250px','height':'auto'}" [src]="movie.poster" alt="{{ movie.title }}">
+  <mat-card-title>{{ movie.title }}</mat-card-title>
+  <mat-card-subtitle>Release Date: {{ movie.releaseDate }}</mat-card-subtitle>
+  <mat-card-content>
+    {{ movie.description }}
+  </mat-card-content>
+</mat-card>
+
+<h2>Film List</h2>
+<mat-list>
+  <mat-list-item *ngFor="let film of films">
+    <h3 matLine>{{ film.title }}</h3>
+    <p matLine>Director: {{ film.director }}</p>
+    <p matLine>Release Year: {{ film.releaseYear }}</p>
+  </mat-list-item>
+</mat-list>
+
+<h2>Films by genre</h2>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+  <mat-tab label="Horror">Content 1</mat-tab>
+  <mat-tab label="Action">Content 2</mat-tab>
+  <mat-tab label="Drama">Content 3</mat-tab>
+</mat-tab-group>

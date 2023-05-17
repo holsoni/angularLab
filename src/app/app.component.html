@@ -1,7 +1,6 @@
 <app-header [logo]="name" [user]="userName" (event)="onLogoClick()"></app-header>
-<div class="main">
+<div class="main" fxLayout="row" fxLayout.lt-sm="column">
 <app-left-nav-bar [menuItems]="menuItems" (event)="onMenuClick($event)"></app-left-nav-bar>
   <router-outlet></router-outlet>
-
 </div>
 <app-footer [menuItems]="menuItems" (event)="onMenuClick($event)"></app-footer>

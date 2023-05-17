@@ -7,6 +7,7 @@ import {SeriesComponent} from "./series/series.component";
 import {ClipsComponent} from "./clips/clips.component";
 import {InfoComponent} from "./info/info.component";
 import {NotFoundComponent} from "./not-found/not-found.component";
+import {ProfilesComponent} from "./profiles/profiles.component";
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'series', component: SeriesComponent },
   { path: 'clips', component: ClipsComponent },
   { path: 'info/:id', component: InfoComponent },
+  { path: 'profile', component: ProfilesComponent },
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: '**',  component: NotFoundComponent}
 
