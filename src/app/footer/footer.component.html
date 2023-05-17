@@ -3,8 +3,12 @@
     &copy; 2023 Lab1+2.com
   </div>
   <div [style]="{'display':'flex','justify-content': 'space-around',}">
-  <div [style]="{'padding-right':'10px','cursor':'pointer'}" *ngFor="let item of menuItems" >
-    <div [ngClass]="{'active': item.active}" href="#" (click)="onMenuClick(item.label)">{{item.label}}</div>
+  <div [style]="{'padding-right':'10px','cursor':'pointer','display':'flex','flex-direction':'row'}"  >
+    <div [style]="{'padding-right':'10px'}" routerLink="/home" routerLinkActive="active">Main page</div>
+      <div [style]="{'padding-right':'10px'}"routerLink="/films" routerLinkActive="active">Films</div>
+      <div [style]="{'padding-right':'10px'}"routerLink="/series" routerLinkActive="active">Series</div>
+      <div [style]="{'padding-right':'10px'}"routerLink="/clips" routerLinkActive="active">Clips</div>
+      <div [style]="{'padding-right':'10px'}"routerLink="/info/1" routerLinkActive="active">Info</div>
   </div>
   </div>
 </footer>

@@ -1,0 +1,7 @@
+<div style="font-size: 25px;margin: 20px">
+  <div>ID: {{user.id}}</div>
+  <div>Name: {{user.name}} {{user.lastname}}</div>
+  <div>Date of Birth: {{user.dateOfBirth | date:'dd.MM.yyyy'}}</div>
+  <div>Salary: {{user.salary |customPipe}}</div>
+  <div>Working Hours: {{user.workingHours }}</div>
+</div>

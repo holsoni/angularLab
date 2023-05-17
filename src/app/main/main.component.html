@@ -1,0 +1,7 @@
+<div *ngFor="let user of users" style="display: flex; flex-direction: row;padding:15px;font-size: 19px;border:1px solid black;">
+  <a [routerLink]="['/info', user.id]">ID: {{user.id}} | </a>
+  <div>Name: {{user.name}} {{user.lastname}} |</div>
+  <div>Date of Birth: {{user.dateOfBirth |date:"dd.MM.yyyy"}} |</div>
+  <div>Salary: {{user.salary | currency}}  |</div>
+  <div>Working Hours: {{user.workingHours }} |</div>
+</div>
